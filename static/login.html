@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lyricstyper · sign in</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Lexend+Deca:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <span class="logo"><span class="logo-mark">♪</span><span class="logo-text"><span class="dim">lyrics</span>typer</span></span>
+      <p>type song lyrics in sync with the music.<br />sign in to keep your history, bests and settings on every device.</p>
+      <div id="gbtn"></div>
+      <div id="err" class="load-error"></div>
+      <small>we only use your name, email and picture to sign you in.</small>
+    </div>
+  </div>
+  <script>
+    try { const t = JSON.parse(localStorage.getItem("lt_settings") || "{}").theme; if (t) document.documentElement.dataset.theme = t; } catch {}
+    const next = (() => { const n = new URLSearchParams(location.search).get("next") || "/"; return n.startsWith("/") && !n.startsWith("//") ? n : "/"; })();
+    const err = (m) => (document.getElementById("err").textContent = m);
+
+    async function onCredential(resp) {
+      err("");
+      try {
+        const r = await fetch("/api/auth/google", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ credential: resp.credential }) });
+        if (!r.ok) throw new Error((await r.json().catch(() => ({}))).detail || r.statusText);
+        location.replace(next);
+      } catch (e) { err("sign-in failed: " + e.message); }
+    }
+
+    (async () => {
+      const cfg = await fetch("/api/auth/config").then((r) => r.json());
+      if (!cfg.enabled) return location.replace(next);
+      const wait = () => new Promise((ok) => { const t = setInterval(() => { if (window.google?.accounts?.id) { clearInterval(t); ok(); } }, 50); });
+      await wait();
+      google.accounts.id.initialize({ client_id: cfg.client_id, callback: onCredential, ux_mode: "popup" });
+      google.accounts.id.renderButton(document.getElementById("gbtn"), { theme: "filled_black", size: "large", shape: "pill", text: "continue_with", width: 280 });
+    })().catch((e) => err(String(e)));
+  </script>
+</body>
+</html>

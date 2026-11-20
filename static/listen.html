@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animated Lyrics Player – Free Lyric Video Generator for Any Song | lyricstyper</title>
+  <meta name="description" content="Turn any song into an animated lyric video in your browser. Synced lyrics in 5 styles (karaoke, kinetic, typewriter, neon, flow) on a cover-art background that pulses to the beat." />
+  <link rel="canonical" href="https://song.vux06.space/listen.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#2a2c30" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="lyricstyper" />
+  <meta property="og:title" content="Animated Lyrics Player – Free Lyric Video Generator for Any Song | lyricstyper" />
+  <meta property="og:description" content="Turn any song into an animated lyric video in your browser. Synced lyrics in 5 styles (karaoke, kinetic, typewriter, neon, flow) on a cover-art background that pulses to the beat." />
+  <meta property="og:url" content="https://song.vux06.space/listen.html" />
+  <meta property="og:image" content="https://song.vux06.space/og-listen.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="lyricstyper listen: an animated, karaoke-style lyric video playing in the browser" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Animated Lyrics Player – Free Lyric Video Generator for Any Song | lyricstyper" />
+  <meta name="twitter:description" content="Turn any song into an animated lyric video in your browser. Synced lyrics in 5 styles (karaoke, kinetic, typewriter, neon, flow) on a cover-art background that pulses to the beat." />
+  <meta name="twitter:image" content="https://song.vux06.space/og-listen.png" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://song.vux06.space/#website", "name": "lyricstyper", "alternateName": ["Lyrics Typer", "lyrics typer"], "url": "https://song.vux06.space/"}, {"@type": "WebApplication", "@id": "https://song.vux06.space/listen.html#app", "url": "https://song.vux06.space/listen.html", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript and a modern browser", "isAccessibleForFree": true, "inLanguage": "en", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://song.vux06.space/og-listen.png", "isPartOf": {"@id": "https://song.vux06.space/#website"}, "name": "lyricstyper listen – animated lyrics player", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Lyric video generator", "description": "An animated lyrics player that turns any song into a lyric video. Synced lyrics in karaoke, kinetic, typewriter, neon and flow styles, with a blurred cover-art background and a beat pulse driven by the music.", "featureList": ["Animated synced lyrics for any song", "Karaoke word-by-word fill", "Kinetic, typewriter, neon and flow lyric styles", "Cover-art background with beat pulse", "7 fonts, speed and lyric offset controls", "Fullscreen lyric video"]}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Lexend+Deca:wght@300;400;600;700&family=Montserrat:wght@600;800;900&family=Anton&family=Space+Mono:wght@400;700&family=Tilt+Neon&family=Playfair+Display:ital,wght@1,700&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="listen.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="listen.html" id="logoBtn" title="listen home">
+      <span class="logo-mark">♪</span><span class="logo-text"><span class="dim">lyrics</span>typer <span class="logo-tag">listen</span></span>
+    </a>
+    <nav>
+      <a class="icon-btn" href="index.html" title="typing test">⌨<span>typing test</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ SEARCH ============ -->
+    <section id="viewSearch" class="view active">
+      <div class="hero">
+        <h1>animated lyrics player <span>turn any song into a lyric video, right in your browser</span></h1>
+      </div>
+      <form id="searchForm" class="search">
+        <select id="sourceSel" title="source">
+          <option value="youtube">youtube</option>
+          <option value="soundcloud">soundcloud</option>
+        </select>
+        <input id="searchInput" type="text" autocomplete="off" spellcheck="false"
+               placeholder="search a song, or paste a youtube / soundcloud link…" />
+        <button type="submit" class="btn primary">search</button>
+      </form>
+      <div id="searchStatus" class="status"></div>
+      <div id="results" class="results"></div>
+      <div id="recent" class="home-history"></div>
+
+      <article class="about">
+        <section>
+          <h2>a lyric video generator for any song</h2>
+          <p>lyricstyper listen plays any song from YouTube or SoundCloud as an <strong>animated lyric video</strong>. The synced lyrics are found automatically and move with the music on a blurred cover-art background with drifting colours, film grain and a <strong>beat pulse</strong> driven by the bass. No editing, no upload, no watermark: search a song and press play.</p>
+        </section>
+        <section>
+          <h2>5 lyric styles</h2>
+          <ul class="feat">
+            <li><b>karaoke</b>: each word fills with colour as it is sung, like a karaoke screen</li>
+            <li><b>kinetic</b>: bold uppercase words pop in on the beat (kinetic typography)</li>
+            <li><b>typewriter</b>: letters are typed out with a blinking cursor</li>
+            <li><b>neon</b>: glowing words that flicker on</li>
+            <li><b>flow</b>: a scrolling lyrics list. Click any line to jump to it</li>
+          </ul>
+        </section>
+        <section>
+          <h2>made for learning lyrics</h2>
+          <p>Use it to learn the words of a song, to sing along or as a fullscreen lyrics screen. Change the font (7 choices), background, text size, speed and lyric offset, loop the song, and use the keyboard: <kbd>space</kbd> play/pause, <kbd>←</kbd>/<kbd>→</kbd> seek, <kbd>↑</kbd>/<kbd>↓</kbd> previous/next line, <kbd>1</kbd>–<kbd>5</kbd> lyric style, <kbd>f</kbd> fullscreen.</p>
+          <p>Know the words? Try the <a href="/">lyrics typing test</a> and type the song while it plays.</p>
+        </section>
+        <section class="faq">
+          <h2>faq</h2>
+          <details><summary>is the lyric video maker free?</summary><p>Yes. Sign in with Google and play as many songs as you like.</p></details>
+          <details><summary>where do the synced lyrics come from?</summary><p>Time-synced lyrics come from lrclib.net, with lyrics.ovh as a fallback. You can pick another match or paste your own .lrc file.</p></details>
+          <details><summary>can I make it fullscreen?</summary><p>Yes. Press <kbd>f</kbd> or the ⛶ button. The controls hide while the song plays, so it works as a karaoke or lyrics display.</p></details>
+          <details><summary>the lyrics are early or late. how do I fix it?</summary><p>Open <em>Aa options</em> and change the lyrics offset until the words line up with the singer.</p></details>
+        </section>
+      </article>
+    </section>
+
+    <!-- ============ LOADING ============ -->
+    <section id="viewLoading" class="view">
+      <div class="loading-card">
+        <img id="loadThumb" alt="" />
+        <div class="load-title" id="loadTitle"></div>
+        <ul class="steps">
+          <li id="stepAudio"><span class="spin"></span> downloading audio</li>
+          <li id="stepLyrics"><span class="spin"></span> finding lyrics</li>
+        </ul>
+        <div id="loadError" class="load-error"></div>
+        <button class="btn" id="loadCancel">back</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="page-switch" href="index.html" id="typeFooter"><span>⌨</span> typing test <small>type the lyrics in sync with the song</small></a>
+    <div>audio via yt-dlp · lyrics via lrclib.net / lyrics.ovh</div>
+  </footer>
+
+  <!-- ============ PLAYER STAGE ============ -->
+  <div id="stage" class="stage" data-style="flow" data-bg="cover" data-phase="">
+    <div class="bg">
+      <div class="bg-img" id="bgImg"></div>
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </div>
+
+    <div class="lyr" id="lyr"></div>
+
+    <div class="titlecard">
+      <div class="tc-kicker" id="tcKicker">now playing</div>
+      <div class="tc-title" id="tcTitle"></div>
+      <div class="tc-artist" id="tcArtist"></div>
+    </div>
+    <div class="interlude"><span></span><span></span><span></span></div>
+    <button class="bigplay" id="bigPlay" title="play">▶</button>
+
+    <div class="stage-top chrome">
+      <button class="sbtn" id="backBtn" title="back to search">← back</button>
+      <div class="st-meta">
+        <div class="st-title" id="stTitle"></div>
+        <div class="st-sub"><span id="stLyrics"></span> · <button class="slink" id="changeLyricsBtn">change lyrics</button></div>
+      </div>
+      <a class="sbtn accent" id="typeLink" href="index.html">⌨ type this song</a>
+    </div>
+
+    <div class="controls chrome">
+      <div class="seek">
+        <span id="tCur">0:00</span>
+        <input type="range" id="seek" min="0" max="1000" value="0" />
+        <span id="tDur">0:00</span>
+      </div>
+      <div class="ctl-row">
+        <div class="ctl-group">
+          <button class="sbtn icon" id="prevLine" title="previous line (↑)">⏮</button>
+          <button class="sbtn icon play" id="playBtn" title="play / pause (space)">▶</button>
+          <button class="sbtn icon" id="nextLine" title="next line (↓)">⏭</button>
+          <input type="range" id="vol" class="vol" min="0" max="1" step="0.05" title="volume" />
+        </div>
+        <div class="styles" id="styleChips"></div>
+        <div class="ctl-group">
+          <button class="sbtn" id="optsBtn" title="fonts, background, speed…">Aa options</button>
+          <button class="sbtn icon" id="fsBtn" title="fullscreen (f)">⛶</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="opts" id="opts">
+      <div class="settings" id="optsBody"></div>
+    </div>
+  </div>
+
+  <!-- ============ LYRICS PICKER MODAL ============ -->
+  <div class="modal" id="lyricsModal">
+    <div class="modal-card wide">
+      <div class="modal-head"><h2>choose lyrics</h2><button class="icon-btn" data-close>✕</button></div>
+      <div id="lyricsModalMsg" class="status"></div>
+      <form id="lyricsSearchForm" class="search small">
+        <input id="lyricsSearchInput" type="text" placeholder="search lrclib (artist + title)…" autocomplete="off" />
+        <button class="btn" type="submit">search</button>
+      </form>
+      <div id="lyricsCandidates" class="candidates"></div>
+      <details class="paste">
+        <summary>…or paste your own lyrics (plain text or .lrc with [mm:ss.xx] timestamps)</summary>
+        <textarea id="pasteLyrics" rows="8" placeholder="[00:12.30] first line&#10;[00:15.80] second line&#10;…or just plain lines"></textarea>
+        <button class="btn primary" id="usePastedBtn">use these lyrics</button>
+      </details>
+    </div>
+  </div>
+
+  <audio id="audio" preload="auto"></audio>
+  <div id="toast" class="toast"></div>
+  <script src="common.js"></script>
+  <script src="listen.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /login.html
+
+Sitemap: https://song.vux06.space/sitemap.xml

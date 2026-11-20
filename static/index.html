@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lyrics Typing Test – Type Song Lyrics While the Music Plays | lyricstyper</title>
+  <meta name="description" content="Free typing test with real song lyrics. Search any song, type its lyrics in sync as it plays, and see your WPM, accuracy and personal best. Typing practice with music." />
+  <link rel="canonical" href="https://song.vux06.space/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#2a2c30" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="lyricstyper" />
+  <meta property="og:title" content="Lyrics Typing Test – Type Song Lyrics While the Music Plays | lyricstyper" />
+  <meta property="og:description" content="Free typing test with real song lyrics. Search any song, type its lyrics in sync as it plays, and see your WPM, accuracy and personal best. Typing practice with music." />
+  <meta property="og:url" content="https://song.vux06.space/" />
+  <meta property="og:image" content="https://song.vux06.space/og-type.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="lyricstyper: a typing test where you type song lyrics in sync with the music" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lyrics Typing Test – Type Song Lyrics While the Music Plays | lyricstyper" />
+  <meta name="twitter:description" content="Free typing test with real song lyrics. Search any song, type its lyrics in sync as it plays, and see your WPM, accuracy and personal best. Typing practice with music." />
+  <meta name="twitter:image" content="https://song.vux06.space/og-type.png" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://song.vux06.space/#website", "name": "lyricstyper", "alternateName": ["Lyrics Typer", "lyrics typer"], "url": "https://song.vux06.space/"}, {"@type": "WebApplication", "@id": "https://song.vux06.space/#app", "url": "https://song.vux06.space/", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript and a modern browser", "isAccessibleForFree": true, "inLanguage": "en", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://song.vux06.space/og-type.png", "isPartOf": {"@id": "https://song.vux06.space/#website"}, "name": "lyricstyper – lyrics typing test", "applicationCategory": "EducationalApplication", "applicationSubCategory": "Typing test", "description": "A typing test made of song lyrics. Search a song on YouTube or SoundCloud, then type the lyrics while it plays, with the sung line highlighted. Get WPM, accuracy, consistency and a personal best per song.", "featureList": ["Type song lyrics in sync with the music", "Synced lyrics found automatically", "WPM, accuracy, raw WPM and consistency", "Personal best per song and test history", "Song on/off mode", "5 colour themes"]}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Lexend+Deca:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#" id="logoBtn" title="home">
+      <span class="logo-mark">♪</span><span class="logo-text"><span class="dim">lyrics</span>typer</span>
+    </a>
+    <nav>
+      <button class="icon-btn" id="navSearch" title="search songs">⌕<span>search</span></button>
+      <button class="icon-btn" id="navHistory" title="history">◷<span>history</span></button>
+      <button class="icon-btn" id="navSettings" title="settings">⚙<span>settings</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HOME / SEARCH ============ -->
+    <section id="viewHome" class="view active">
+      <div class="hero">
+        <h1>lyrics typing test <span>type any song's lyrics while it plays</span></h1>
+      </div>
+      <form id="searchForm" class="search">
+        <select id="sourceSel" title="source">
+          <option value="youtube">youtube</option>
+          <option value="soundcloud">soundcloud</option>
+        </select>
+        <input id="searchInput" type="text" autocomplete="off" spellcheck="false"
+               placeholder="search a song, or paste a youtube / soundcloud link…" />
+        <button type="submit" class="btn primary">search</button>
+      </form>
+      <div id="searchStatus" class="status"></div>
+      <div id="results" class="results"></div>
+
+      <div id="homeHistory" class="home-history"></div>
+
+      <article class="about">
+        <section>
+          <h2>a typing test made of song lyrics</h2>
+          <p>lyricstyper is a free typing test where the text is the lyrics of a song you choose. Search any song on YouTube or SoundCloud (or paste a link) and the synced lyrics are found for you. The song plays and you type along, with the line being sung highlighted, so typing practice feels like singing along on your keyboard.</p>
+          <p>When the song ends you get your <strong>WPM</strong>, <strong>accuracy</strong>, raw WPM, consistency and a chart of your speed over the song, plus a <strong>personal best for every song</strong>. Sign in with Google to keep your typing history and bests on every device.</p>
+        </section>
+        <section>
+          <h2>how it works</h2>
+          <ol>
+            <li><b>search a song</b>: type a title or artist, or paste a YouTube or SoundCloud link.</li>
+            <li><b>type the lyrics</b> as the music plays. The indicator shows whether you are behind or ahead of the singer.</li>
+            <li><b>see your results</b>: words per minute, accuracy, errors and how much of the song you typed.</li>
+          </ol>
+        </section>
+        <section>
+          <h2>features</h2>
+          <ul class="feat">
+            <li><b>lyrics in sync</b> with the music, from lrclib.net, with the sung line highlighted</li>
+            <li><b>song: off mode</b> for a silent lyrics typing test with no music</li>
+            <li><b>real typing stats</b>: wpm, raw wpm, accuracy, consistency, missed and extra characters</li>
+            <li><b>personal bests and history</b> for every song, with "play again"</li>
+            <li><b>forgiving options</b>: ignore case and punctuation, simplify accents, drop ad-libs</li>
+            <li><b>5 themes</b>, adjustable playback speed (0.5×–1.25×) and lyrics offset</li>
+          </ul>
+        </section>
+        <section>
+          <h2>learn the song first</h2>
+          <p>Don't know the words yet? Open the <a href="listen.html">animated lyrics player</a> to watch the song as a lyric video in karaoke, kinetic, typewriter, neon or flow style, then come back and type it.</p>
+        </section>
+        <section class="faq">
+          <h2>faq</h2>
+          <details><summary>is lyricstyper free?</summary><p>Yes. The typing test and the lyrics player are free. You only need a Google account to sign in.</p></details>
+          <details><summary>how is wpm calculated?</summary><p>Like other typing tests, one word is five characters. By default wpm uses your active typing time, so long instrumental breaks don't lower your score. You can switch to total time in settings.</p></details>
+          <details><summary>can I type lyrics without the music?</summary><p>Yes. Turn <em>song: off</em> to type the lyrics in silence, at your own pace.</p></details>
+          <details><summary>what if the lyrics are wrong or out of sync?</summary><p>Click <em>change lyrics</em> to pick another match, search lrclib yourself or paste your own lyrics (plain text or .lrc). Use <em>lyrics offset</em> to fix timing.</p></details>
+          <details><summary>does it help me type faster?</summary><p>Typing songs you love keeps practice fun, so you practice more. Real lyrics also bring in slang, contractions and punctuation that word-list tests skip.</p></details>
+        </section>
+      </article>
+    </section>
+
+    <!-- ============ LOADING ============ -->
+    <section id="viewLoading" class="view">
+      <div class="loading-card">
+        <img id="loadThumb" alt="" />
+        <div class="load-title" id="loadTitle"></div>
+        <ul class="steps">
+          <li id="stepAudio"><span class="spin"></span> downloading audio</li>
+          <li id="stepLyrics"><span class="spin"></span> finding lyrics</li>
+        </ul>
+        <div id="loadError" class="load-error"></div>
+        <button class="btn" id="loadCancel">back</button>
+      </div>
+    </section>
+
+    <!-- ============ TEST ============ -->
+    <section id="viewTest" class="view">
+      <div class="song-bar">
+        <img id="songThumb" alt="" />
+        <div class="song-meta">
+          <div class="song-title" id="songTitle"></div>
+          <div class="song-sub">
+            <span id="lyricsInfo"></span>
+            <button class="link" id="changeLyricsBtn">change lyrics</button>
+            <a class="link" id="listenLink" href="listen.html">🎧 listen first</a>
+          </div>
+        </div>
+        <div class="mode-pills">
+          <button class="pill on" id="songToggle">♪ song: on</button>
+        </div>
+      </div>
+
+      <div class="live">
+        <div class="live-stats" id="liveStats">
+          <span class="ls-time" id="lsTime">0:00</span>
+          <span><b id="lsWpm">0</b> wpm</span>
+          <span><b id="lsAcc">100</b>% acc</span>
+          <span><b id="lsWords">0</b>/<span id="lsWordsTotal">0</span> words</span>
+          <span id="lsBehind" class="behind"></span>
+        </div>
+        <div class="progress"><div id="songProgress"></div><div id="typeProgress"></div></div>
+      </div>
+
+      <div id="sungHint" class="sung-hint">
+        <div class="sung-now" id="sungNow"></div>
+        <div class="sung-next" id="sungNext"></div>
+      </div>
+
+      <div class="words-wrap" id="wordsWrap">
+        <div class="words" id="words"></div>
+        <div class="caret" id="caret"></div>
+        <div class="focus-overlay" id="focusOverlay">click here or press any key to focus</div>
+        <div class="start-hint" id="startHint">start typing to begin ♪</div>
+      </div>
+
+      <div class="test-controls">
+        <button class="btn" id="pauseBtn" title="pause / resume (ctrl+p)">❚❚ pause</button>
+        <button class="btn danger" id="stopBtn" title="stop and show results (esc)">■ stop &amp; results</button>
+        <button class="btn" id="restartBtn" title="restart (tab)">↻ restart</button>
+      </div>
+      <div class="hints">
+        <kbd>tab</kbd> restart · <kbd>esc</kbd> stop &amp; see results · <kbd>ctrl</kbd>+<kbd>p</kbd> pause ·
+        <kbd>space</kbd>/<kbd>enter</kbd> next word · <kbd>ctrl</kbd>+<kbd>⌫</kbd> delete word
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section id="viewResults" class="view">
+      <div class="results-top">
+        <div class="big">
+          <div class="big-stat"><div class="label">wpm</div><div class="value" id="rWpm">0</div></div>
+          <div class="big-stat"><div class="label">acc</div><div class="value" id="rAcc">0%</div></div>
+        </div>
+        <div class="chart-wrap"><canvas id="chart"></canvas></div>
+      </div>
+      <div class="r-grid" id="rGrid"></div>
+      <div class="r-song" id="rSong"></div>
+      <div class="test-controls">
+        <button class="btn primary" id="retryBtn">↻ retry this song</button>
+        <button class="btn" id="newSongBtn">⌕ new song</button>
+      </div>
+    </section>
+
+    <!-- ============ HISTORY ============ -->
+    <section id="viewHistory" class="view">
+      <h2>history</h2>
+      <div id="historyList"></div>
+      <button class="btn danger" id="clearHistoryBtn">clear history</button>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="page-switch" id="listenFooter" href="listen.html"><span>🎧</span> listen only <small>learn the lyrics before you type them</small></a>
+    <div>audio via yt-dlp · lyrics via lrclib.net / lyrics.ovh · for personal typing practice</div>
+  </footer>
+
+  <!-- ============ SETTINGS MODAL ============ -->
+  <div class="modal" id="settingsModal">
+    <div class="modal-card wide">
+      <div class="modal-head"><h2>settings</h2><button class="icon-btn" data-close>✕</button></div>
+      <div class="settings" id="settingsBody"></div>
+      <div class="modal-foot">
+        <button class="btn" id="resetSettingsBtn">reset to defaults</button>
+        <button class="btn primary" data-close>done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LYRICS PICKER MODAL ============ -->
+  <div class="modal" id="lyricsModal">
+    <div class="modal-card wide">
+      <div class="modal-head"><h2>choose lyrics</h2><button class="icon-btn" data-close>✕</button></div>
+      <div id="lyricsModalMsg" class="status"></div>
+      <form id="lyricsSearchForm" class="search small">
+        <input id="lyricsSearchInput" type="text" placeholder="search lrclib (artist + title)…" autocomplete="off" />
+        <button class="btn" type="submit">search</button>
+      </form>
+      <div id="lyricsCandidates" class="candidates"></div>
+      <details class="paste">
+        <summary>…or paste your own lyrics (plain text or .lrc with [mm:ss.xx] timestamps)</summary>
+        <textarea id="pasteLyrics" rows="8" placeholder="[00:12.30] first line&#10;[00:15.80] second line&#10;…or just plain lines"></textarea>
+        <button class="btn primary" id="usePastedBtn">use these lyrics</button>
+      </details>
+    </div>
+  </div>
+
+  <audio id="audio" preload="auto"></audio>
+  <div id="toast" class="toast"></div>
+  <script src="common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
