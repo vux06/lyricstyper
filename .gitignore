@@ -1,0 +1,12 @@
+# python
+.venv/
+__pycache__/
+
+# runtime data: downloaded audio, YouTube cookies, user database
+cache/
+data/
+*.db
+
+# secrets
+.env
+*.pem
